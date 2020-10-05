@@ -1,6 +1,6 @@
 {
   "name": "urlshortener",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "proxy": "http://localhost:3000",
   "scripts": {
@@ -8,10 +8,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server":"cd ./server && node ./bin/www",
-    "project":"npm run server & npx yarn run client"
+    "server": "cd ./server && node ./bin/www",
+    "start": "npm run server & npx yarn run client"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.10.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
@@ -22,10 +26,6 @@
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
     "node-fetch": "^2.6.1",
-    "@babel/plugin-proposal-export-default-from": "^7.10.4",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -52,6 +52,7 @@
   "devDependencies": {
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "redux-mock-store": "^1.5.4"
   }
 }

@@ -44,7 +44,7 @@ const UrlModel = {
 
     getStats: async () => {
         return new Promise((resolve, reject) => {
-            connect.query(`select su.long_url, su.short_url, stat.country from stats as stat join short_urls su on su.id = stat.short_urls_id`, [], (err, data) => {
+            connect.query(`select su.long_url, su.short_url, su.id as url_id, count(stat.id) as count, GROUP_CONCAT(DISTINCT stat.country) as countries from stats as stat RIGHT join short_urls su on su.id = stat.short_urls_id GROUP BY url_id`, [], (err, data) => {
                 if (err) {
                     reject(err);
                 } else {

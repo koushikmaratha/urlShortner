@@ -15,12 +15,12 @@ function generateRandomId(length) {
 }
 
 
-//middleware
+// /saveurl middleware
 router.use('/saveurl', (req, res, next) => {
   req.body.short_url = generateRandomId(6);
   next();
 })
-//middleware
+// /saveurl middleware
 
 router.get('/', (req, res, next) => {
   res.status(200);
